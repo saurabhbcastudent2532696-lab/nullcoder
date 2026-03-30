@@ -6,7 +6,7 @@ const songs = [
     name: "Ishqa Ve",
     artist: "SINGER->Zeeshan Ali",
     cover: "https://i.ytimg.com/vi/j18MRhEfmPk/maxresdefault.jpg",
-    audio: "song1.mp3",
+    audio: "song2.mp3",
     durationText: "0:00"
   },
   {
@@ -14,7 +14,7 @@ const songs = [
     name: "Ranjheya Ve",
     artist: "Zain Zohaib",
     cover: "https://i.ytimg.com/vi/55c6IlV7BEo/maxresdefault.jpg",
-    audio: "song2.mp3",
+    audio: "song1.mp3",
     durationText: "0:00"
   },
   {
