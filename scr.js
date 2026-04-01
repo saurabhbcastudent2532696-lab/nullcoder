@@ -1,8 +1,8 @@
 (function(){
   // ---------- ENHANCED SONG DATABASE (with moods for AI) ----------
   const songs = [
-    { id:1, name:"Ishqa Ve", artist:"Zeeshan Ali", cover:"https://i.ytimg.com/vi/j18MRhEfmPk/maxresdefault.jpg", audio:"song1.mp3", liked:false, mood:"romantic" },
-    { id:2, name:"Ranjheya Ve", artist:"Zain Zohaib", cover:"https://i.ytimg.com/vi/55c6IlV7BEo/maxresdefault.jpg", audio:"song2.mp3", liked:false, mood:"romantic" },
+    { id:1, name:"Ishqa Ve", artist:"Zeeshan Ali", cover:"https://i.ytimg.com/vi/j18MRhEfmPk/maxresdefault.jpg", audio:"song2.mp3", liked:false, mood:"romantic" },
+    { id:2, name:"Ranjheya Ve", artist:"Zain Zohaib", cover:"https://i.ytimg.com/vi/55c6IlV7BEo/maxresdefault.jpg", audio:"song1.mp3", liked:false, mood:"romantic" },
     { id:3, name:"Faded", artist:"Alan Walker", cover:"https://i.ytimg.com/vi/60ItHLz5WEA/maxresdefault.jpg", audio:"song3.mp3", liked:false, mood:"sad" },
     { id:4, name:"Mere Mehboob", artist:"Kishore Kumar", cover:"https://img.youtube.com/vi/yIzCBU0_LyY/maxresdefault.jpg", audio:"song4.mp3", liked:false, mood:"romantic" }
   ];
