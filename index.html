@@ -1,72 +1,53 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-  <title>SK Music • Pro Edition | All‑Device Premium Player</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content">
+  <title>SK Music Pro | AI-Powered Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <video id="bgVideo" autoplay loop muted playsinline poster="https://via.placeholder.com/1920x1080">
+    <source src="video2.mp4" type="video/mp4">
+    <source src="video1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
 
-<div class="container">
-  <div class="sidebar">
-    <div class="logo">
-      <i class="fas fa-head-side-vr"></i>
-      <span>SK Music<span style="color:#1db954;">l</span> Pro</span>
-    </div>
-    <ul class="nav">
-      <li class="active"><i class="fas fa-home"></i><span>Home</span></li>
-      <li><i class="fas fa-compass"></i><span>Discover</span></li>
-      <li><i class="fas fa-heart"></i><span>Liked Songs</span></li>
-      <li><i class="fas fa-list-ul"></i><span>Playlists</span></li>
-    </ul>
-  </div>
-
-  <div class="main">
-    <div class="header">
-      <h1>Good Evening, Melophile 🎧</h1>
-    </div>
-    <div class="section-title">
-      <h2>Your Daily Dose</h2>
-      <i class="fas fa-waveform" style="color:#1db954;"></i>
-    </div>
-    <div class="song-grid" id="songList"></div>
-  </div>
-</div>
-
-<div class="player">
-  <div class="now-playing">
-    <img id="currentCover" src="https://i.ytimg.com/vi/j18MRhEfmPk/maxresdefault.jpg" alt="cover">
-    <div class="track-info">
-      <h4 id="currentTitle">Ishqa Ve</h4>
-      <p id="currentArtist">Zeeshan Ali</p>
-    </div>
-  </div>
-  <div class="player-controls">
-    <div class="controls">
-      <button id="prev" aria-label="Previous"><i class="fas fa-backward-step"></i></button>
-      <button id="play" class="play-pause" aria-label="Play/Pause"><i class="fas fa-play"></i></button>
-      <button id="next" aria-label="Next"><i class="fas fa-forward-step"></i></button>
-    </div>
-    <div class="progress-container">
-      <span class="time" id="currentTime">0:00</span>
-      <div class="progress-bar" id="progressBar">
-        <div class="progress" id="progress"></div>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="logo"><i class="fas fa-head-side-vr"></i><span>SK <span>Pro</span></span></div>
+      <ul id="navList">
+        <li data-tab="home" class="active"><i class="fas fa-home"></i> Home</li>
+        <li data-tab="discover"><i class="fas fa-compass"></i> Discover</li>
+        <li data-tab="liked"><i class="fas fa-heart"></i> Liked Songs</li>
+        <li data-tab="playlists"><i class="fas fa-list-ul"></i> Playlists</li>
+      </ul>
+      <div class="sidebar-bottom">
+        <button id="themeToggle"><i class="fas fa-moon"></i></button>
+        <button id="aiBtn"><i class="fas fa-sparkles"></i> AI</button>
       </div>
-      <span class="time" id="duration">0:00</span>
-    </div>
+    </aside>
+    <main class="main">
+      <button id="hamburger" class="hamburger"><i class="fas fa-bars"></i></button>
+      <div class="ticker"><div class="ticker-content">🎧 Ishqa Ve • Ranjheya Ve • Faded • Mere Mehboob • Alan Walker • Zeeshan Ali • Kishore Kumar • AI Mix • Grok Assistant • Smooth Vibes 🎧</div></div>
+      <section id="home" class="section active"><h1>SK Music Pro</h1><h2>Your Daily Dose</h2><div class="song-grid" id="homeGrid"></div></section>
+      <section id="discover" class="section"><h1>Discover New Vibes</h1><div class="search-container"><i class="fas fa-search"></i><input id="searchInput" type="text" placeholder="Search songs or artists..."></div><div class="song-grid" id="discoverGrid"></div></section>
+      <section id="liked" class="section"><h1>Liked Songs ❤️</h1><div class="song-grid" id="likedGrid"></div></section>
+      <section id="playlists" class="section"><h1>Your Playlists</h1><div id="playlistsContainer" class="song-grid"><div class="empty-state"><i class="fas fa-list-ul fa-3x"></i><p>No playlists yet — coming soon</p></div></div></section>
+    </main>
   </div>
-  <div class="volume">
-    <button id="volumeIcon" aria-label="Volume"><i class="fas fa-volume-up"></i></button>
-    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="80" aria-label="Volume control">
+
+  <div class="player">
+    <div class="now-playing"><img id="currentCover" alt="cover"><div class="track-info"><h4 id="currentTitle">Select a song</h4><p id="currentArtist">Artist</p></div></div>
+    <div class="player-center"><div class="controls"><button id="prevBtn"><i class="fas fa-backward-step"></i></button><button id="playBtn" class="play-pause"><i class="fas fa-play"></i></button><button id="nextBtn"><i class="fas fa-forward-step"></i></button></div><div class="progress-container"><span id="currentTime">0:00</span><div class="progress-bar" id="progressBar"><div class="progress" id="progress"></div></div><span id="duration">0:00</span></div></div>
+    <div class="volume"><button id="volumeIconBtn"><i class="fas fa-volume-up"></i></button><input type="range" id="volumeSlider" min="0" max="100" value="70"></div>
   </div>
-</div>
 
-<audio id="audioPlayer" preload="metadata"></audio>
+  <div id="aiModal" class="modal"><div class="modal-content"><div class="modal-header"><h2><i class="fas fa-sparkles"></i> Grok AI Assistant</h2><button id="closeModal" class="close-btn" style="background:#1db954;">✖</button></div><div class="ai-tabs"><button class="ai-tab active" data-tab="recommend">Smart Recs</button><button class="ai-tab" data-tab="mood">Mood Playlists</button><button class="ai-tab" data-tab="ask">Ask Grok</button></div><div id="ai-recommend" class="ai-tab-content active"><p class="ai-subtitle">✨ Based on your current vibe</p><div class="song-grid" id="aiSuggestions"></div></div><div id="ai-mood" class="ai-tab-content"><div class="mood-grid"><div class="mood-card" data-mood="chill">🌙 Chill</div><div class="mood-card" data-mood="energy">🔥 Energetic</div><div class="mood-card" data-mood="romantic">❤️ Romantic</div><div class="mood-card" data-mood="sad">💔 Sad</div><div class="mood-card" data-mood="party">🎉 Party</div></div><div class="song-grid" id="moodResults"></div></div><div id="ai-ask" class="ai-tab-content"><input id="askInput" type="text" placeholder="e.g., recommend party songs or what is SK Pro?"><button id="askSubmit" class="ask-btn">Ask Grok</button><div id="aiResponse" class="ai-response"></div></div></div></div>
+  <audio id="audioPlayer" preload="metadata"></audio>
 
-<script src="scr.js"></script>
+  <script src="scr.js"></script>
 </body>
 </html>
