@@ -1,12 +1,21 @@
 (function(){
   // ---------- ENHANCED SONG DATABASE (with moods for AI) ----------
-  const songs = [
-    { id:1, name:"Ishqa Ve", artist:"Zeeshan Ali", cover:"https://i.ytimg.com/vi/j18MRhEfmPk/maxresdefault.jpg", audio:"song2.mp3", liked:false, mood:"romantic" },
-    { id:2, name:"Ranjheya Ve", artist:"Zain Zohaib", cover:"https://i.ytimg.com/vi/55c6IlV7BEo/maxresdefault.jpg", audio:"song1.mp3", liked:false, mood:"romantic" },
-    { id:3, name:"Faded", artist:"Alan Walker", cover:"https://i.ytimg.com/vi/60ItHLz5WEA/maxresdefault.jpg", audio:"song3.mp3", liked:false, mood:"sad" },
-    { id:4, name:"Mere Mehboob", artist:"Kishore Kumar", cover:"https://img.youtube.com/vi/yIzCBU0_LyY/maxresdefault.jpg", audio:"song4.mp3", liked:false, mood:"romantic" }
+   const songs = [
+     { id: 12, name: "KHAIRIYAT",         artist: "Arijit Singh",     cover: "https://i.ytimg.com/vi/hoNb6HuNmU0/maxresdefault.jpg", audio: "song12.mp3", liked: false, mood: "romantic" },
+       { id: 1,  name: "Ishqa Ve",          artist: "Zeeshan Ali",      cover: "https://i.ytimg.com/vi/j18MRhEfmPk/hqdefault.jpg",     audio: "song2.mp3",  liked: false, mood: "romantic" },
+    { id: 2,  name: "Ranjheya Ve",       artist: "Zain Zohaib",      cover: "https://i.ytimg.com/vi/55c6IlV7BEo/hqdefault.jpg",     audio: "song1.mp3",  liked: false, mood: "romantic" },
+    { id: 3,  name: "Faded",             artist: "Alan Walker",      cover: "https://i.ytimg.com/vi/60ItHLz5WEA/hqdefault.jpg",     audio: "song3.mp3",  liked: false, mood: "sad" },
+    { id: 4,  name: "Mere Mehboob",      artist: "Kishore Kumar",    cover: "https://i.ytimg.com/vi/yIzCBU0_LyY/hqdefault.jpg",     audio: "song4.mp3",  liked: false, mood: "romantic" },
+    { id: 5,  name: "Shape of You",      artist: "Ed Sheeran",       cover: "https://i.ytimg.com/vi/JGwWNGJdvx8/hqdefault.jpg",     audio: "song5.mp3",  liked: false, mood: "energy" },
+    { id: 6,  name: "Blinding Lights",   artist: "The Weeknd",       cover: "https://i.ytimg.com/vi/TUVcZfQe-Kw/maxresdefault.jpg", audio: "song6.mp3",  liked: false, mood: "energy" },
+    { id: 7,  name: "Levitating",        artist: "Dua Lipa",         cover: "https://i.ytimg.com/vi/TUVcZfQe7pY/maxresdefault.jpg", audio: "song7.mp3",  liked: false, mood: "party" },
+    { id: 8,  name: "Perfect",           artist: "Ed Sheeran",       cover: "https://i.ytimg.com/vi/2Vv-BfVoq4g/hqdefault.jpg",     audio: "song8.mp3",  liked: false, mood: "romantic" },
+    { id: 9,  name: "Someone You Loved", artist: "Lewis Capaldi",    cover: "https://i.ytimg.com/vi/m3m2i2eE5qU/maxresdefault.jpg", audio: "song9.mp3",  liked: false, mood: "sad" },
+    { id: 10, name: "Watermelon Sugar",  artist: "Harry Styles",     cover: "https://i.ytimg.com/vi/E07s5ZYygMg/hqdefault.jpg",     audio: "song10.mp3", liked: false, mood: "party" },
+    { id: 11, name: "Ocean Eyes",        artist: "Billie Eilish",    cover: "https://i.ytimg.com/vi/viimfQi_pUw/hqdefault.jpg",     audio: "song11.mp3", liked: false, mood: "chill" },
+ 
+    { id: 13, name: "Lambiyaan",         artist: "Arijit Singh",     cover: "https://i.ytimg.com/vi/0TgNQXj6rr0/maxresdefault.jpg", audio: "song13.mp3", liked: false, mood: "romantic" }
   ];
-
   // Load likes from localStorage
   const storedLikes = JSON.parse(localStorage.getItem("sk_liked") || "[]");
   songs.forEach(song => { if (storedLikes.includes(song.id)) song.liked = true; });
